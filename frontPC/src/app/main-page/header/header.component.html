@@ -1,12 +1,11 @@
 <!-- Main Navigation -->
 <header>
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md navbar-light fixed-top scrolling-navbar">
     <div class="container-fluid">
 
       <!-- Brand -->
-      <a class="navbar-brand" href="https://mdbecommerce.com/">
+      <a class="navbar-brand" routerLink="home">
         <img src="assets/logo.png" width="200">
       </a>
 
@@ -30,7 +29,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink3" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="true">
-              <i class="united kingdom flag m-0"></i>
+              <p>Find by</p>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="#!">Action</a>
@@ -39,22 +38,17 @@
             </div>
           </li>
           <li class="nav-item">
-            <a href="#!" class="nav-link waves-effect">
-              Shop
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#!" class="nav-link waves-effect">
+            <a routerLink="contact" class="nav-link waves-effect">
               Contact
             </a>
           </li>
           <li class="nav-item">
-            <a href="#!" class="nav-link waves-effect">
+            <a routerLink="sign-in" class="nav-link waves-effect">
               Sign in
             </a>
           </li>
           <li class="nav-item pl-2 mb-2 mb-md-0">
-            <a href="#!" type="button"
+            <a routerLink="sign-up" type="button"
                class="btn btn-outline-info btn-md btn-rounded btn-navbar waves-effect waves-light">Sign
               up</a>
           </li>
@@ -67,7 +61,7 @@
   <!-- Navbar -->
 
   <div class="jumbotron color-grey-light mt-70">
-    <div class="d-flex align-items-center h-100">
+    <div class="d-flex align-items-center h-50">
       <div class="container text-center py-5">
         <h1 class="mb-3" style="color: rebeccapurple">PC TECHNOLOGY</h1>
         <p class="mb-0" style="color: rebeccapurple">BE UPDATED</p>
@@ -77,4 +71,4 @@
 
 </header>
 <!-- Main Navigation -->
-<app-home></app-home>
+<router-outlet></router-outlet>
