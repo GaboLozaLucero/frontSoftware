@@ -15,6 +15,8 @@ import { SignUpComponent } from './main-page/sign-up/sign-up.component';
 import { HomeComponent } from './main-page/home/home.component';
 import { ContactComponent } from './main-page/contact/contact.component';
 import { NavBarComponent } from './main-page/nav-bar/nav-bar.component';
+import { ProductComponent } from './main-page/product/product.component';
+import { StoreComponent } from './main-page/store/store.component';
 
 /*ROUTES*/
 import { APP_ROUTING } from "./app.routes";
@@ -27,7 +29,9 @@ import { APP_ROUTING } from "./app.routes";
     SignUpComponent,
     HomeComponent,
     ContactComponent,
-    NavBarComponent
+    NavBarComponent,
+    ProductComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

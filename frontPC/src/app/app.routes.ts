@@ -5,6 +5,7 @@ import {ContactComponent} from './main-page/contact/contact.component';
 import {SignUpComponent} from './main-page/sign-up/sign-up.component';
 import {SignInComponent} from './main-page/sign-in/sign-in.component';
 import {NavBarComponent} from './main-page/nav-bar/nav-bar.component';
+import {StoreComponent} from './main-page/store/store.component';
 
 const APP_ROUTES: Routes = [
   { path: 'navbar', component: NavBarComponent},
@@ -12,6 +13,7 @@ const APP_ROUTES: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'sign-in', component: SignInComponent},
   { path: 'sign-up', component: SignUpComponent},
+  { path: 'product', component: StoreComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' }//redirectTo: 'home'
 ];
 
