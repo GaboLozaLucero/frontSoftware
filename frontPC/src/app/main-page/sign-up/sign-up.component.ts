@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Observable } from 'rxjs';
 import {Router} from '@angular/router';
 import {ServiceService} from './serviceSignUp/service.service';
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-sign-up',
@@ -46,6 +47,6 @@ export class SignUpComponent implements OnInit {
       'birthday': post.birthday,
       'email': post.email,
       'username': post.username,
-      'password': post.password}).subscribe(data => {alert('User registered correctly');});
+      'password': post.password}).subscribe(data => {alertify.success('User registered correctly');});
   }
 }

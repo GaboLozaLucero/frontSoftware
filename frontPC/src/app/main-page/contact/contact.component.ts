@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as alertify from 'alertifyjs';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -10,6 +11,10 @@ export class ContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+
   }
 
 }
