@@ -1,14 +1,13 @@
 import { RouterModule, Routes } from '@angular/router';
 
-import {HeaderComponent} from './main-page/header/header.component';
 import {HomeComponent} from './main-page/home/home.component';
 import {ContactComponent} from './main-page/contact/contact.component';
 import {SignUpComponent} from './main-page/sign-up/sign-up.component';
 import {SignInComponent} from './main-page/sign-in/sign-in.component';
-
+import {NavBarComponent} from './main-page/nav-bar/nav-bar.component';
 
 const APP_ROUTES: Routes = [
-  { path: 'header', component: HeaderComponent},
+  { path: 'navbar', component: NavBarComponent},
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent},
   { path: 'sign-in', component: SignInComponent},

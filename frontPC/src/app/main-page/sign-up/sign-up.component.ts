@@ -49,4 +49,3 @@ export class SignUpComponent implements OnInit {
       'password': post.password}).subscribe(data => {alert('User registered correctly');});
   }
 }
-
