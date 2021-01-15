@@ -5,14 +5,22 @@
     <div class="col-6 m-auto">
       <div class="card m-auto">
         <div class="card-header" style="background-color: #2d8997">
-          <h2 style="color: white"><strong>Register</strong></h2>
+          <h2 style="color: white"><strong>SIGN-UP</strong></h2>
+          <h4 style="color: white">Be part of our great community</h4>
         </div>
         <div class="card-body">
-          <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+          <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form" autocomplete="off">
 
             <div class="form-group col-12">
-              <label for="City" class="form-label">City</label>
-              <input type="number" class="form-control" required formControlName="cityId">
+              <label for="City" class="form-label">City*</label>
+              <select formControlName="cityId" class="form-control">
+                <option value="">Select your city</option>
+                <option value="1">La Paz</option>
+                <option value="2">Cochabamba</option>
+                <option value="3">Santa Cruz</option>
+                <option value="4">Oruro</option>
+                <option value="5">Tarija</option>
+              </select>
             </div>
 
             <div class="form-group col-12">
@@ -21,44 +29,44 @@
             </div>
 
             <div class="form-group col-12">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" placeholder="Name" ngModel required formControlName="name" matInput>
-              <mat-error *ngIf="isValidField('name')">{{getErrorMessage("name")}}</mat-error>
+              <label for="name" class="form-label">Name*</label>
+              <input type="text" class="form-control" placeholder="Name - 3 characters minimum" ngModel required formControlName="name" minlength="3" #name>
+            </div>
+<br>
+            <div class="form-group col-12">
+              <label for="lastname" class="form-label">Lastname*</label>
+              <input type="text" class="form-control" placeholder="Lastname - 3 characters minimum" ngModel required formControlName="lastname">
             </div>
 
             <div class="form-group col-12">
-              <label for="lastname" class="form-label">Lastname</label>
-              <input type="text" class="form-control" placeholder="Lastname" ngModel required formControlName="lastname" matInput>
-              <mat-error *ngIf="isValidField('lastname')">{{getErrorMessage("lastname")}}</mat-error>
+              <label for="phone" class="form-label">Phone*</label>
+              <input type="text" class="form-control" placeholder="Phone - 8 numbers" ngModel required formControlName="phone">
             </div>
 
             <div class="form-group col-12">
-              <label for="phone" class="form-label">Phone</label>
-              <input type="text" class="form-control" placeholder="Phone" ngModel required formControlName="phone">
-            </div>
-
-            <div class="form-group col-12">
-              <label for="birthday" class="form-label">Birthday</label>
+              <label for="birthday" class="form-label">Birthday*</label>
               <input type="text" class="form-control" placeholder="YY-MM-DD" ngModel required formControlName="birthday" >
             </div>
 
             <div class="form-group col-12">
-              <label for="email" class="form-label">Email</label>
+              <label for="email" class="form-label">Email*</label>
               <input type="text" class="form-control" placeholder="Email" ngModel required formControlName="email" >
             </div>
 
             <div class="form-group col-12">
-              <label for="email" class="form-label">Username</label>
-              <input type="text" class="form-control" placeholder="Username" ngModel required formControlName="username" >
+              <label for="email" class="form-label">Username*</label>
+              <input type="text" class="form-control" placeholder="Username - 5 characters minimum" ngModel required formControlName="username" >
             </div>
 
             <div class="form-group col-12">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" placeholder="Password" ngModel required formControlName="password" >
+              <label for="password" class="form-label">Password*</label>
+              <input type="password" class="form-control" placeholder="Password - 6 characters minimum" ngModel required formControlName="password" >
             </div>
-
+            <br>
+            <div class="alert-warning" *ngIf="formGroup.invalid">*All fields must be completed</div>
+            <br>
             <div class="form-group col-12">
-              <button type="submit" class="btn btn-primary" >Save</button>
+              <button type="submit" class="btn btn-primary col-md-12" >REGISTER</button>
             </div>
           </form>
         </div>

@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 /*MODULES*/
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 /*COMPONENTS*/
 import { AppComponent } from './app.component';
@@ -40,6 +41,7 @@ import { APP_ROUTING } from "./app.routes";
     ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
+    MaterialModule,
     BrowserAnimationsModule,
     APP_ROUTING
   ],

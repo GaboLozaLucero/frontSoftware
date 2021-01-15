@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators, NgForm} from '@angular/forms';
 import { Observable } from 'rxjs';
 import {Router} from '@angular/router';
 import {ServiceService} from './serviceSignUp/service.service';
@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
       'birthday': post.birthday,
       'email': post.email,
       'username': post.username,
-      'password': post.password}).subscribe(data => { alertify.success('User registered correctly'); }, (error) => { alertify.error('One or more fields are wrong'); } );
+      'password': post.password}).subscribe(data => { alertify.success('User registered correctly'); this.formGroup.reset(); }, (error) => { alertify.error(error.message); } );
   }
   getErrorMessage(field: string): string {
     let message;
