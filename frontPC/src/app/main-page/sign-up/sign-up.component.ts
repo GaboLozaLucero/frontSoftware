@@ -25,15 +25,15 @@ export class SignUpComponent implements OnInit {
   // tslint:disable-next-line:typedef
   createForm(){
     this.formGroup = this.formBuilder.group({
-      cityId: [null, [Validators.required]],
-      companyId: [null, [Validators.required]],
-      name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(97)]],
-      lastname: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(97)]],
-      phone: [null, [Validators.required, Validators.minLength(8), Validators.maxLength(10)]],
-      birthday: [null, [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      email: [null, [Validators.required, Validators.minLength(13), Validators.maxLength(60), Validators.email]],
-      username: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(30)]],
-      password: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(80)]]
+      cityId: ['', [Validators.required]],
+      companyId: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(97)]],
+      lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(97)]],
+      phone: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(10)]],
+      birthday: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      email: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(60), Validators.email]],
+      username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]],
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(80)]]
     });
   }
   // tslint:disable-next-line:typedef
@@ -48,6 +48,6 @@ export class SignUpComponent implements OnInit {
       'birthday': post.birthday,
       'email': post.email,
       'username': post.username,
-      'password': post.password}).subscribe(data => {alertify.success('User registered correctly'); error => alertify.alert('la cagaste')});
+      'password': post.password}).subscribe(data => { alertify.success('User registered correctly'); }, (error) => { alertify.error('One or more fields are wrong'); } );
   }
 }

@@ -22,11 +22,9 @@ export class StoreComponent implements OnInit {
   public getSantizeUrl(url : string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
-  alert(product: Product) {
+  /*alert(product: Product) {
     this.productService.setLast(product);
-    const dialogRef = this.dialog.open(ProductComponent,{
-      width: '520px',disableClose: true
-    });
-  }
+    const dialogRef = this.router.navigateByUrl(/product/);
+  }*/
 
 }
