@@ -15,6 +15,7 @@ export class SignUpComponent implements OnInit {
   public formGroup: any;
   titleAlert = 'This field is required';
   post: any = '';
+  error: any;
 
   constructor(private formBuilder: FormBuilder, private serviceService: ServiceService, private router: Router) { }
 
@@ -47,6 +48,6 @@ export class SignUpComponent implements OnInit {
       'birthday': post.birthday,
       'email': post.email,
       'username': post.username,
-      'password': post.password}).subscribe(data => {alertify.success('User registered correctly');});
+      'password': post.password}).subscribe(data => {alertify.success('User registered correctly'); error => alertify.alert('la cagaste')});
   }
 }

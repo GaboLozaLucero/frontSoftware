@@ -1,16 +1,19 @@
-<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="20px grid" class="contenedor" fxLayoutAlign="flex-start">
-  <div fxFlex="25%" fxFlex.sm="50%" fxFlex.md="33" *ngFor="let product of products" >
-    <div class="container">
-      <div class="row-cols-2">
-        <div class="col-md-6">
+
+
+
+<div class="row" style="margin-top: 10px;">
+  <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+
+      <div class="row-cols-6">
+        <div class="col-md-12">
           <div class="ibox">
             <div class="ibox-content product-box">
-              <div class="product-imitation">
-                <img mat-card-image [src]="getSantizeUrl(product.img)" alt="Fotografia de muestra" class="image" (click)="alert(product)" width="300px">
+              <div class="product-images">
+                <img [src]="getSantizeUrl(product.img)" alt="Fotografia de muestra" class="image" (click)="alert(product)" width="400px" height="400px">
               </div>
               <div class="product-desc">
-                <span class="product-price">
-                  Bs. {{product.pricePerUnit}}
+                <span class="product-price border">
+                  <div class="product-detail">$ {{product.pricePerUnit}}</div>
                 </span>
                 <a href="#" class="product-name">{{product.productName}}</a>
                 <div class="small m-t-xs">
@@ -18,13 +21,12 @@
                 </div>
                 <br>
                 <div class="m-t text-righ">
-                  <a href="#" class="btn btn-xs btn-outline btn-primary">{{product.model}}<i class="fa fa-long-arrow-right"></i> </a>
+                  <a href="#" class="btn btn-xs btn-outline btn-primary">{{product.productName}} {{product.model}}<i class="fa fa-long-arrow-right"></i> </a>
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
-  </div>
+</div>
 </div>

@@ -1,66 +1,66 @@
 <div class="jumbotron jumbotron-image color-grey-light "
      style="background-image: url('../../../assets/selling.jpg'); ">
-<div class="row">
+  <div class="row">
 
-  <div class="col-6 m-auto">
-    <div class="card m-auto">
-      <div class="card-header" style="background-color: #2d8997">
-        <h2 style="color: white"><strong>Register</strong></h2>
-      </div>
-      <div class="card-body">
-        <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
+    <div class="col-6 m-auto">
+      <div class="card m-auto">
+        <div class="card-header" style="background-color: #2d8997">
+          <h2 style="color: white"><strong>Register</strong></h2>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form">
 
-          <div class="form-group col-12">
-            <label for="City" class="form-label">City</label>
-            <input type="text" class="form-control" required formControlName="cityId">
-          </div>
+            <div class="form-group col-12">
+              <label for="City" class="form-label">City</label>
+              <input type="text" class="form-control" required formControlName="cityId">
+            </div>
 
-          <div class="form-group col-12">
-            <label for="Company" class="form-label">Company</label>
-            <input type="text" class="form-control" placeholder="Customer" required formControlName="companyId" disabled>
-          </div>
+            <div class="form-group col-12">
+              <label for="Company" class="form-label">Company</label>
+              <input type="text" class="form-control" placeholder="Customer" required formControlName="companyId" disabled>
+            </div>
 
-          <div class="form-group col-12">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" placeholder="Name" ngModel required formControlName="name">
-          </div>
+            <div class="form-group col-12">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Name" ngModel required formControlName="name">
+            </div>
 
-          <div class="form-group col-12">
-            <label for="lastname" class="form-label">Lastname</label>
-            <input type="text" class="form-control" placeholder="Lastname" ngModel required formControlName="lastname">
-          </div>
+            <div class="form-group col-12">
+              <label for="lastname" class="form-label">Lastname</label>
+              <input type="text" class="form-control" placeholder="Lastname" ngModel required formControlName="lastname">
+            </div>
 
-          <div class="form-group col-12">
-            <label for="phone" class="form-label">Phone</label>
-            <input type="text" class="form-control" placeholder="Phone" ngModel required formControlName="phone">
-          </div>
+            <div class="form-group col-12">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="text" class="form-control" placeholder="Phone" ngModel required formControlName="phone">
+            </div>
 
-          <div class="form-group col-12">
-            <label for="birthday" class="form-label">Birthday</label>
-            <input type="text" class="form-control" placeholder="YY-MM-DD" ngModel required formControlName="birthday" >
-          </div>
+            <div class="form-group col-12">
+              <label for="birthday" class="form-label">Birthday</label>
+              <input type="text" class="form-control" placeholder="YY-MM-DD" ngModel required formControlName="birthday" >
+            </div>
 
-          <div class="form-group col-12">
-            <label for="email" class="form-label">Email</label>
-            <input type="text" class="form-control" placeholder="Email" ngModel required formControlName="email" >
-          </div>
+            <div class="form-group col-12">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" placeholder="Email" ngModel required formControlName="email" >
+            </div>
 
-          <div class="form-group col-12">
-            <label for="email" class="form-label">Username</label>
-            <input type="text" class="form-control" placeholder="Username" ngModel required formControlName="username" >
-          </div>
+            <div class="form-group col-12">
+              <label for="email" class="form-label">Username</label>
+              <input type="text" class="form-control" placeholder="Username" ngModel required formControlName="username" >
+            </div>
 
-          <div class="form-group col-12">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" placeholder="Password" ngModel required formControlName="password" >
-          </div>
+            <div class="form-group col-12">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Password" ngModel required formControlName="password" >
+            </div>
 
-          <div class="form-group col-12">
-            <button type="submit" class="btn btn-primary" >Save</button>
-          </div>
-        </form>
+            <div class="form-group col-12">
+              <button type="submit" class="btn btn-primary" >Save</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </div>

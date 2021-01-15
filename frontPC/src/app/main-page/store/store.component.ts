@@ -16,14 +16,17 @@ export class StoreComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts();
   }
-  alert(product: Product) {
-    this.productService.setLast(product);
-  }
   getProducts (){
     this.productService.getProducts().subscribe(products => this.products = products);
   }
   public getSantizeUrl(url : string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+  alert(product: Product) {
+    this.productService.setLast(product);
+    const dialogRef = this.dialog.open(ProductComponent,{
+      width: '520px',disableClose: true
+    });
   }
 
 }
