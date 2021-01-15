@@ -12,30 +12,24 @@ import * as alertify from 'alertifyjs';
 })
 export class SignUpComponent implements OnInit {
 
-  public formGroup: any;
-  titleAlert = 'This field is required';
+  private validEmail = /\S+@\S+\.\S+/;
   post: any = '';
   error: any;
+  formGroup = this.formBuilder.group({
+    cityId: ['', [Validators.required]],
+    companyId: ['', [Validators.required]],
+    name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(97)]],
+    lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(97)]],
+    phone: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(10)]],
+    birthday: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+    email: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(60), Validators.pattern(this.validEmail)]],
+    username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]],
+    password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(80)]]
+  });
 
   constructor(private formBuilder: FormBuilder, private serviceService: ServiceService, private router: Router) { }
 
-  ngOnInit(): void {
-    this.createForm();
-  }
-  // tslint:disable-next-line:typedef
-  createForm(){
-    this.formGroup = this.formBuilder.group({
-      cityId: ['', [Validators.required]],
-      companyId: ['', [Validators.required]],
-      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(97)]],
-      lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(97)]],
-      phone: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(10)]],
-      birthday: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      email: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(60), Validators.email]],
-      username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]],
-      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(80)]]
-    });
-  }
+  ngOnInit(): void {  }
   // tslint:disable-next-line:typedef
   onSubmit(post: any){
     // tslint:disable-next-line:max-line-length
@@ -49,5 +43,22 @@ export class SignUpComponent implements OnInit {
       'email': post.email,
       'username': post.username,
       'password': post.password}).subscribe(data => { alertify.success('User registered correctly'); }, (error) => { alertify.error('One or more fields are wrong'); } );
+  }
+  getErrorMessage(field: string): string {
+    let message;
+    if (this.formGroup.get(field).errors.requiered) {
+      message = 'This field is requiered';
+    } else if (this.formGroup.get(field).hasError('pattern')) {
+      message = 'Not valid email';
+    } else if (this.formGroup.get(field).hasError('minLength')) {
+      const minLength = this.formGroup.get(field).errors?.minLength.requiredLength;
+      message = `This field must be longer than ${minLength} characters`;
+    }
+    return message;
+  }
+  isValidField(field: string): boolean {
+    return (
+      (this.formGroup.get(field).touched || this.formGroup.get(field).dirty) && !this.formGroup.get(field).valid
+    );
   }
 }

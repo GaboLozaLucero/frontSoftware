@@ -13,7 +13,7 @@ const APP_ROUTES: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'sign-in', component: SignInComponent},
   { path: 'sign-up', component: SignUpComponent},
-  { path: 'product', component: StoreComponent},
+  { path: 'store', component: StoreComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'home' }//redirectTo: 'home'
 ];
 
