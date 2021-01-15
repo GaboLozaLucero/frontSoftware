@@ -1,0 +1,120 @@
+<div class="jumbotron jumbotron-image color-grey-light "
+     style="background-image: url('../../../assets/selling.jpg'); ">
+  <div class="row">
+
+    <div class="col-6 m-auto">
+      <div class="card m-auto">
+        <div class="card-header" style="background-color: #2d8997">
+          <h2 style="color: white"><strong>SIGN-UP</strong></h2>
+          <h4 style="color: white">Be part of our great community</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" class="form" autocomplete="off">
+
+            <div class="form-group col-12">
+              <label for="city" class="form-label">City*</label>
+              <select formControlName="cityId" class="form-control">
+                <option value="">Select your city</option>
+                <option value="1">La Paz</option>
+                <option value="2">Cochabamba</option>
+                <option value="3">Santa Cruz</option>
+                <option value="4">Oruro</option>
+                <option value="5">Tarija</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12">
+              <label for="brand" class="form-label">Brand*</label>
+              <select formControlName="brandId" class="form-control">
+                <option value="">Select the brand</option>
+                <option value="1">Asus</option>
+                <option value="2">MSI</option>
+                <option value="3">HP</option>
+                <option value="4">Nvidia</option>
+                <option value="5">Deepcool</option>
+                <option value="6">REDRAGON</option>
+                <option value="7">Intel</option>
+                <option value="8">AMD</option>
+                <option value="9">EVGA</option>
+                <option value="10">Samsung</option>
+                <option value="11">ROCCAT</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12">
+              <label for="productType" class="form-label">Product Type*</label>
+              <select formControlName="productTypeId" class="form-control">
+                <option value="">Select the type of the product</option>
+                <option value="1">Motherboard</option>
+                <option value="2">CPU</option>
+                <option value="3">GPU</option>
+                <option value="4">Keyboard</option>
+                <option value="5">Mouse</option>
+                <option value="6">Screencooler</option>
+                <option value="7">Cooler</option>
+                <option value="8">RAM</option>
+                <option value="9">SSD</option>
+                <option value="10">HDD</option>
+                <option value="11">Power Supply</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12">
+              <label for="company" class="form-label">Company*</label>
+              <select formControlName="companyId" class="form-control">
+                <option value="">Select the company</option>
+                <option value="1">Big PC</option>
+                <option value="2">Cochabamba</option>
+                <option value="3">Computadoras Gonzales</option>
+                <option value="4">Grandes Partes</option>
+                <option value="5">Turbo</option>
+              </select>
+            </div>
+
+            <div class="form-group col-12">
+              <label for="productName" class="form-label">Product Name*</label>
+              <input type="text" class="form-control" placeholder="Product name - 3 characters minimum" ngModel required formControlName="productName">
+            </div>
+
+            <div class="form-group col-12">
+              <label for="model" class="form-label">Model*</label>
+              <input type="text" class="form-control" placeholder="Model - 3 characters minimum" ngModel required formControlName="model">
+            </div>
+
+            <div class="form-group col-12">
+              <label for="stock" class="form-label">Stock*</label>
+              <input type="Number" class="form-control" placeholder="Stock" ngModel required formControlName="stock">
+            </div>
+
+            <div class="form-group col-12">
+              <label for="weight" class="form-label">Weight*</label>
+              <input type="text" class="form-control" placeholder="Weight" ngModel required formControlName="weight">
+            </div>
+
+            <div class="form-group col-12">
+              <label for="image" class="form-label">Image URL*</label>
+              <input type="text" class="form-control" placeholder="Image URL" ngModel required formControlName="image" >
+            </div>
+
+            <div class="form-group col-12">
+              <label for="pricePerUnit" class="form-label">Price*</label>
+              <input type="number" class="form-control" placeholder="Price" ngModel required formControlName="pricePerUnit" >
+            </div>
+
+            <div class="form-group col-12">
+              <label for="productDescription" class="form-label">Product description*</label>
+              <input type="text" class="form-control" placeholder="Product description - 5 characters minimum" ngModel required formControlName="productDescription" >
+            </div>
+
+            <br>
+            <div class="alert-warning" *ngIf="formGroup.invalid">*All fields must be completed</div>
+            <br>
+            <div class="form-group col-12">
+              <button type="submit" class="btn btn-primary col-md-12" >ADD PRODUCT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

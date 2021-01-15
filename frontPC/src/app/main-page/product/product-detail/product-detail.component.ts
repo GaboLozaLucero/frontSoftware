@@ -19,7 +19,7 @@ export class ProductDetailComponent implements OnInit {
   errorMessage: any;
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) {
-
+/*
     this.activatedRoute.params.subscribe(params => {
       this.productId = [parseInt(params['productId'])]
       console.log(params['productId']);
@@ -30,7 +30,7 @@ export class ProductDetailComponent implements OnInit {
     .subscribe((data: any) => {
       this.product = data;
       console.log(this.product[0]);
-    });
+    });*/
   }
   ngOnInit(): void { }
 }

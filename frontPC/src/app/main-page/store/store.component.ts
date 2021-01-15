@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import { ProductService } from '../product/product.service';
 import { Product} from '../product/product';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ProductComponent } from '../product/product.component';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-store',
@@ -27,7 +26,7 @@ export class StoreComponent implements OnInit {
   alert(product: Product) {
     this.productService.setLast(product);
     const dialogRef = this.dialog.open(ProductComponent, {
-      width: '1000px', disableClose: true
+      width: '1500px', disableClose: true
     });
   }
 

@@ -19,6 +19,7 @@ import { NavBarComponent } from './main-page/nav-bar/nav-bar.component';
 import { ProductComponent } from './main-page/product/product.component';
 import { StoreComponent } from './main-page/store/store.component';
 import { ProductDetailComponent} from './main-page/product/product-detail/product-detail.component';
+import { AddProductComponent } from './main-page/add-product/add-product.component';
 
 /*ROUTES*/
 import { APP_ROUTING } from "./app.routes";
@@ -34,7 +35,8 @@ import { APP_ROUTING } from "./app.routes";
     NavBarComponent,
     ProductComponent,
     StoreComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

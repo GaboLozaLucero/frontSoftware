@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
       'birthday': post.birthday,
       'email': post.email,
       'username': post.username,
-      'password': post.password}).subscribe(data => { alertify.success('User registered correctly'); this.formGroup.reset(); }, (error) => { alertify.error(error.message); } );
+      'password': post.password}).subscribe(data => { alertify.success('User registered correctly'); this.formGroup.reset(); }, (error) => { alertify.error('Invalid field(s), check your information'); } );
   }
   get f() { return this.formGroup.controls; }
   getErrorMessage(field: string): string {
