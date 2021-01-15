@@ -44,6 +44,7 @@ export class SignUpComponent implements OnInit {
       'username': post.username,
       'password': post.password}).subscribe(data => { alertify.success('User registered correctly'); this.formGroup.reset(); }, (error) => { alertify.error(error.message); } );
   }
+  get f() { return this.formGroup.controls; }
   getErrorMessage(field: string): string {
     let message;
     if (this.formGroup.get(field).errors.requiered) {
